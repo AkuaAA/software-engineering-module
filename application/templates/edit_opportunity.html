@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Edit Opportunity{% endblock %}
+{% block content %}
+<h1>Edit Opportunity</h1>
+<form method="POST" action="{{ url_for('views.edit_opportunity', opportunity_id=opportunity.id) }}">
+    <div class="form-group">
+        <label for="data">Opportunity</label>
+        <textarea name="data" id="data" class="form-control">{{ opportunity.data }}</textarea>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Update Opportunity</button>
+</form>
+{% endblock %}

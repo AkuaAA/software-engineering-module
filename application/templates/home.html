@@ -1,0 +1,63 @@
+{% extends "base.html" %} 
+{% block title %} Home {% endblock %} 
+{% block content %}
+<!-- messages -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+         {{message}}
+         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="col-md-4"></div>
+</div>
+{% endif %}
+{% endwith %}
+
+<!-- welcome message -->
+{% block welcome_message %}
+{% if current_user.is_authenticated %}
+<h1 class="text-center">Welcome {{current_user.email}}!</h1>
+{% endif %}
+{% endblock %}
+
+
+<!-- New Post Form -->
+{% block new_post %}
+    {% if current_user.is_authenticated and current_user.is_admin %}
+        <h2>New Post</h2>
+        <form action="{{ url_for('views.create_opportunity') }}" method="post">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" required>
+            <label for="body">Body</label>
+            <textarea id="body" name="body" required></textarea>
+            <input class="form-submit" type="submit" value="Create Post">
+        </form>
+    {% endif %}
+{% endblock %}
+
+<!-- data -->
+{% block data %}
+    {% for data in data %}
+        <div class="data">
+            <h2>{{ data['title'] }}</h2>
+            <form>
+            <p>{{ data['data'] }}</p>
+            {% if current_user.is_authenticated and current_user.is_admin %}
+
+                    <a href="{{ url_for('views.delete_opportunity', opportunity_id=data['id']) }}"><input type="button" value="Delete" class="btn delete-button"></a>
+                    <a href="{{ url_for('views.edit_opportunity', opportunity_id=data['id']) }}"><input type="button" value="Edit" class="btn btn-secondary edit-button"></a>
+            {% endif %}
+        </form>
+        </div>
+        {% if not loop.last %}
+            <hr>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+{% endblock %}

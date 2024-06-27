@@ -1,0 +1,213 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-signin,
+form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+.form-signin input[type="text"],
+.form-signin input[type="password"],
+form input[type="text"], 
+form textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-signin button[type="submit"],
+input[type="submit"],
+form input.delete-button,
+form a.edit-button,
+a.btn-outline-secondary,
+.btn {
+    padding: 10px 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #0056b3;
+}
+
+.form-signin button[type="submit"],
+a.btn-outline-secondary {
+    background-color: #007BFF;
+    border-color: #007bff;
+}
+
+.form-signin button[type="submit"]:hover,
+a.btn-outline-secondary:hover {
+    background-color: #0056b3;
+}
+
+.post {
+    background-color: rgb(235, 235, 235);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form .delete-button {
+    background-color: rgb(196, 38, 38);
+}
+
+form .delete-button:hover {
+    background-color: rgb(165, 33, 33);
+}
+
+form .edit-button {
+    background-color: #28a745;
+}
+
+form .edit-button:hover {
+    background-color: #218838;
+}
+
+form .form-submit{
+    background-color: #0056b3;
+}
+
+form .form-submit:disabled{
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+
+
+.dashboard-title,
+h1.text-center {
+    text-align: center;
+}
+
+.dashboard-title {
+    font-size: 1.5em;
+}
+
+h1.text-center {
+    font-size: 2.5em;
+}
+
+.error {
+    color: red;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: #007bff; /* Primary color */
+    border-bottom: 2px solid #0056b3; /* Slightly darker shade for depth */
+}
+
+.navbar .navbar-nav .nav-link {
+    color: white;
+    margin-right: 15px;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    background-color: #0056b3;
+    border-radius: 5px;
+}
+
+input[type="submit"], button[type="submit"], a.btn-outline-secondary, form a.edit-button {
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Adjust hover styles for buttons to make them more interactive */
+input[type="submit"]:hover, button[type="submit"]:hover, a.btn-outline-secondary:hover {
+    opacity: 0.8;
+}
+
+
+/* Login and Sign Up Form Styles */
+.login-form,
+.signup-form {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 40px auto;
+}
+
+.login-form h3,
+.signup-form h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-form .form-group,
+.signup-form .form-group {
+    margin-bottom: 15px;
+}
+
+.login-form label,
+.signup-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-form input,
+.signup-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-form button[type="submit"],
+.signup-form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-form button[type="submit"]:hover,
+.signup-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}

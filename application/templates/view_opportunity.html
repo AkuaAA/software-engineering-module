@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}View Opportunity{% endblock %}
+{% block content %}
+
+<body>
+
+</body>
+<h1>{{ opportunity.title }}</h1>
+<p>{{ opportunity.data }}</p>
+
+{% if current_user.role == 'admin' %}
+<form method="POST" action="{{ url_for('views.edit_opportunity', opportunity_id=opportunity.id) }}">
+    <button type="submit" class="btn btn-primary">Edit Opportunity</button>
+</form>
+<form method="POST" action="{{ url_for('views.delete_opportunity', opportunity_id=opportunity.id) }}">
+    <button type="submit" class="btn btn-danger">Delete Opportunity</button>
+</form>
+{% endif %}
+
+
+{% if current_user.role != 'admin' %}
+<form method="POST" action="{{ url_for('views.request_join', opportunity_id=opportunity.id) }}">
+    <button type="submit" class="btn btn-info">Notify Admin</button>
+</form>
+{% endif %}
+<script>
+    function showNotification() {
+        alert('Admin has been notified.');
+        return true;
+    }
+    </script>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Create Opportunity{% endblock %}
+{% block content %}
+<h1>Create Opportunity</h1>
+
+<form method="POST" action="{{ url_for('views.create_opportunity') }}">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" class="form-control" value="{{ data.title if data else '' }}" required>
+    </div>
+    <div class="form-group">
+        <label for="data">Description</label>
+        <textarea name="data" id="data" class="form-control" required>{{ data.body if data else '' }}</textarea>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Create Opportunity</button>
+</form>
+{% endblock %}
